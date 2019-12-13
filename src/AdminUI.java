@@ -5,26 +5,26 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import com.google.gson.Gson;
-
+//admin user interface 
 public class AdminUI {
 	public JFrame view;
-	
+
 	public JButton btnSetupSystem = new JButton("Setup System Configurations");
 	public JButton btnAddUser = new JButton("Add New User");
 	public JButton btnDeleteUser = new JButton("Delete Existing User");
 	public JButton btnAdd = new JButton("Add");
 	public JButton btnDelete = new JButton("Delete");
 	public JButton btnCancel = new JButton("Cancel");
-    
+
 	public JTextField txtUsername = new JTextField(50);
     public JTextField txtPassword = new JTextField(50);
     public JTextField txtFullname = new JTextField(50);
     public JTextField txtUsertype = new JTextField(50);
-	
-	
+
+
 	public AdminUI() {
 		this.view = new JFrame();
-		
+
 		view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         view.setTitle("Store Management System - Admin View");
         view.setSize(1000, 600);
@@ -39,17 +39,17 @@ public class AdminUI {
         panelButtons.add(btnSetupSystem);
         panelButtons.add(btnAddUser);
         panelButtons.add(btnDeleteUser);
-        
+
         view.getContentPane().add(panelButtons);
-        
+
         btnSetupSystem.addActionListener(new ActionListener() {
         	@Override
         	public void actionPerformed(ActionEvent actionEvent) {
-        		
-                
+
+
         	}
         });
-        
+
         btnAddUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -72,18 +72,18 @@ public class AdminUI {
                 line4.add(new JLabel("User Type "));
                 line4.add(txtUsertype);
                 view.getContentPane().add(line4);
-                
+
 
                 JPanel panelButtons = new JPanel(new FlowLayout());
                 panelButtons.add(btnAdd);
                 panelButtons.add(btnCancel);
-                
+
                 view.getContentPane().add(panelButtons);
-                
+
                 view.setVisible(true);
             }
         });
-        
+
         btnDeleteUser.addActionListener(new ActionListener() {
         	@Override
         	public void actionPerformed(ActionEvent actionEvent) {
@@ -106,27 +106,27 @@ public class AdminUI {
                 line4.add(new JLabel("User Type "));
                 line4.add(txtUsertype);
                 view.getContentPane().add(line4);
-                
-                
-                
+
+
+
 
                 JPanel panelButtons = new JPanel(new FlowLayout());
                 panelButtons.add(btnDelete);
                 panelButtons.add(btnCancel);
                 view.getContentPane().add(panelButtons);
-                
+
                 view.setVisible(true);
         	}
         });
 
 	}
-	
+
 	public static void main(String[] args) {
 		int port = 1000;
 		AdminUI ui = new AdminUI();
 		ui.view.setVisible(true);
 	}
-	
-	
-	
+
+
+
 }
